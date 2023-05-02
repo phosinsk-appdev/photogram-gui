@@ -36,4 +36,21 @@ class PhotosController < ApplicationController
 
   end
 
+  def create
+
+    the_image = params.fetch("query_image")
+    the_caption = params.fetch("query_caption")
+    the_owner = params.fetch("query_owner")
+
+    new_photo = Photo.new
+    new_photo.image = the_image
+    new_photo.caption = the_caption
+    new_photo.owner_id = the_owner
+
+    new_photo.save
+
+    redirect_to("/photos")
+
+  end
+
 end
