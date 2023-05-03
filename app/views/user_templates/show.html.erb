@@ -8,7 +8,16 @@
 
 <dt> Edit User </dt>
 
-<dd> insert form </dd>
+<dd>
+
+<form action="/update_user/<%= @the_user.username %>" >
+      <label for="browser_username">Username</label>
+      <input id="browser_username" type="text" name="input_username" placeholder="Enter a username..." value="<%= @the_user.username %>">
+
+      <button>Update user</button>
+    </form>
+
+</dd>
 
 </dl>
 
