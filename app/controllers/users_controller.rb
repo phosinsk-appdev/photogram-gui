@@ -24,4 +24,18 @@ class UsersController < ApplicationController
 
   end
 
+  def create
+
+    the_username = params.fetch("input_username")
+
+
+    new_user = User.new
+    new_user.username = the_username
+
+    new_user.save
+
+    redirect_to("/users/#{new_user.username}")
+
+  end
+
 end
